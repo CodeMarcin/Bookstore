@@ -1,0 +1,20 @@
+<template>
+	<nav>
+		<ul class="mainMenu">
+			<template for:each={menuItems} for:item="singleItem">
+				<template if:true={singleItem.active}>
+					<li class="mainMenu__item mainMenu__item--active" key={singleItem.label}>
+						<c-module-sub-main-menu-item item={singleItem}></c-module-sub-main-menu-item>
+					</li>
+				</template>
+				<template if:false={singleItem.active}>
+					<li class="mainMenu__item" key={singleItem.label}>
+						<c-module-sub-main-menu-item item={singleItem}></c-module-sub-main-menu-item>
+					</li>
+				</template>
+			</template>
+			{mobileMenuIcon}
+		</ul>
+	
+	</nav>
+</template>

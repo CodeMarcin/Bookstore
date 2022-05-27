@@ -1,0 +1,111 @@
+:host {
+    flex-basis: 100%;
+}
+
+.adminEditCategoryWrapper {
+    display: flex;
+	flex-basis: 100%;
+	font-family: var(--fontWorkSans);
+	flex-direction: column;
+}
+
+.adminEditCategoryWrapper__title {
+    font-weight: 700;
+}
+ 
+.adminEditCategoryWrapper__input {
+	border: none;
+	border-bottom: 1px solid var(--colorBlack);
+	padding: 1rem 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.adminEditCategoryWrapper__error {
+	color: #ff0000;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.adminEditCategoryWrapper__success {
+    color: green;
+	font-weight: 600;
+	font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.adminEditCategoryWrapper__submit {
+	border: none;
+	background: var(--colorBlack);
+    color: var(--colorWhite);
+	font-weight: 800;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.adminEditCategoryWrapper__submit:hover {
+	color: var(--colorWhite);
+	background-color: var(--colorSpringGreen);
+}
+
+.adminEditAuthorWrapper__bold {
+
+}
+
+.flex-table {
+	display: flex;
+	flex-direction: column;
+}
+.flex-table thead {
+	color: var(--colorBlack);
+	border-bottom: 3px solid var(--colorBlack);
+	text-transform: uppercase;
+	font-weight: 800;
+}
+.flex-table thead tr,
+.flex-table tbody tr {
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+}
+.flex-table tbody tr + tr {
+	/* border-top: 1px solid #ccc; */
+}
+.flex-table thead tr th,
+.flex-table tbody tr td {
+	display: flex;
+	flex: 1;
+	padding: 0.5em;
+}
+@media screen and (max-width: 640px) {
+	.flex-table {
+		border: 0;
+	}
+	.flex-table thead {
+		display: none;
+	}
+	.flex-table tbody tr {
+		flex-direction: column;
+		margin: 1em;
+		border: 1px solid #ccc;
+	}
+	.flex-table tbody tr td {
+		flex-direction: column;
+	}
+	.flex-table tbody tr td + td {
+		border-top: 1px solid #ccc;
+	}
+	.flex-table tbody tr td:before {
+		display: flex;
+		align-items: center;
+		margin: -0.5em -0.5em 0.75em -0.5em;
+		padding: 0.5em;
+		content: attr(data-label);
+		color: var(--colorBlack);
+		background: var(--colorSpringGreen);
+		text-transform: uppercase;
+		font-weight: 800;
+	}
+}
+

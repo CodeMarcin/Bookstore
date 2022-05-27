@@ -1,0 +1,85 @@
+.discountWrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	margin: 1rem;
+	font-family: var(--fontWorkSans);
+}
+
+.discountWrapper__header {
+	font-size: 2rem;
+	font-weight: 700;
+    text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin: 2rem 0;
+}
+
+.discountBooks {
+	display: flex;
+	justify-content: space-around;
+	gap: 5rem;
+}
+
+@media screen and (max-width: 640px) {
+	.discountBooks {
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+	.discountBooks {
+		flex-wrap: wrap;
+		gap: 0;
+	}
+}
+
+.discountBooks__singleBook {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	flex-basis: 33%;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 640px) {
+	.discountBooks__singleBook {
+		flex-basis: 100%;
+	}
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+	.discountBooks__singleBook {
+        flex-basis: 50%;
+		margin-bottom: 2rem;
+	}
+}
+
+.discountBooks__image {
+	/* position: relative; */
+}
+
+.discountBooks__discountPrice {
+	display: flex;
+	flex-wrap: wrap;
+	flex-basis: 100%;
+	justify-content: space-around;
+	align-items: baseline;
+}
+
+.discountPrice__oldPrice {
+	text-decoration: line-through;
+	font-weight: 500;
+}
+
+.discountPrice__newPrice {
+	font-size: 2rem;
+	font-weight: 900;
+}
+
+.discountBooks__title {
+	font-size: 1.2rem;
+	font-weight: 800;
+	text-align: center;
+}

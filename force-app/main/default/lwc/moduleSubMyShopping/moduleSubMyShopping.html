@@ -1,0 +1,75 @@
+<template>
+	<template if:false={grantAccess}>
+		<c-utilities-page404></c-utilities-page404>
+	</template>
+
+	<template if:true={grantAccess}>
+		<div class="myShoppingWrapper">
+			<template if:true={ordersData}>
+				<div class="myShoppingWrapper__menu">
+                    <span class="myShoppingWrapper__menuTitle">Status:</span>
+					<template for:each={ordersStatusArray} for:item="status">
+                     
+						<template if:true={status.active}>
+							<input
+								key={status.statusName}
+								type="submit"
+								class="myShoppingWrapper__menuItem myShoppingWrapper__menuItem--active"
+								value={status.statusName}
+								name={status.statusName}
+								onclick={changeDisplayOrdersStatus}
+							/>
+						</template>
+						<template if:false={status.active}>
+							<input
+								key={status.statusName}
+								type="submit"
+								class="myShoppingWrapper__menuItem"
+								value={status.statusName}
+								name={status.statusName}
+								onclick={changeDisplayOrdersStatus}
+							/>
+						</template>
+					</template>
+				</div>
+
+				<table class="flex-table">
+					<thead>
+						<tr>
+							<th></th>
+							<th>Date / Time</th>
+							<th>Status</th>
+							<th>Total price</th>
+							<th>Details</th>
+						</tr>
+					</thead>
+					<template if:true={loadingNewData}><c-utilities-loading></c-utilities-loading></template>
+					<template if:false={loadingNewData}>
+						<template if:false={ordersDataExists}>
+							<div class="noItemToDisplay">{noItemsToDisplayText}</div>
+						</template>
+						<template if:true={ordersDataExists}>
+							<tbody>
+								<template for:each={orders} for:item="order">
+									<tr key={order.orderId}>
+										<td data-label={order.orderNumber}>
+											<a href={order.orderHref} target="_blank">{order.orderNumber}</a>
+										</td>
+										<td data-label={order.orderDateTime}>{order.orderDateTime}</td>
+										<td class={order.orderStatusColor} data-label={order.orderStatus}>{order.orderStatus}</td>
+										<td data-label={order.orderTotalPrice}>$ {order.orderTotalPrice}</td>
+                                        <td data-label="details"><a href={order.orderHref} target="_blank"><img src={detailsIcon} alt="Details" title="Details" /></a></td>
+									</tr>
+								</template>
+							</tbody>
+						</template>
+					</template>
+				</table>
+			</template>
+		</div>
+	</template>
+
+	<template if:false={ordersData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+</template>

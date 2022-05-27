@@ -1,0 +1,50 @@
+<template>
+	<template if:false={singleCategoryEdit}>
+		<c-module-sub-admin-content-header>{adminCategoryEditText}</c-module-sub-admin-content-header>
+		<table class="flex-table">
+			<thead>
+				<tr>
+					<th>Category name</th>
+					<th>Edit</th>
+				</tr>
+			</thead>
+			<tbody>
+				<template if:false={allCategoryData}><c-utilities-loading></c-utilities-loading></template>
+				<template if:true={allCategoryData}>
+					<template for:each={allCategory} for:item="category">
+						<tr key={category.categoryId}>
+							<td data-label="Category name">{category.categoryName}</td>
+							<td data-label="Edit">
+								<a href={category.categoryHref}><img src={editIcon} alt="Edit" title="Edit" /></a>
+							</td>
+						</tr>
+					</template>
+				</template>
+			</tbody>
+		</table>
+	</template>
+	<template if:true={singleCategoryEdit}>
+		<template for:each={singleCategory} for:item="category">
+			<div key={category.categoryName} class="adminEditCategoryWrapper">
+				<c-module-sub-admin-content-header>{category.categoryName}</c-module-sub-admin-content-header>
+				<div class="adminEditCategoryWrapper__title">Category name:</div>
+
+				<input
+					type="text"
+					class="adminEditCategoryWrapper__input"
+					value={inputsValue.categoryName}
+					name="categoryName"
+					onchange={checkEditCategoryInputs}
+				/>
+				<div class="adminEditCategoryWrapper__error">{inputsError.categoryName}</div>
+				<input
+					class="adminEditCategoryWrapper__submit"
+					type="submit"
+					value="Edit Category"
+					onclick={submitEditCategory}
+				/>
+
+			</div>
+		</template>
+	</template>
+</template>

@@ -1,0 +1,50 @@
+<template>
+	<template if:false={singleAuthorEdit}>
+		<c-module-sub-admin-content-header>{adminAuthorEditText}</c-module-sub-admin-content-header>
+		<table class="flex-table">
+			<thead>
+				<tr>
+					<th>Author full name</th>
+					<th>Edit</th>
+				</tr>
+			</thead>
+			<tbody>
+				<template if:false={allAuthorsData}><c-utilities-loading></c-utilities-loading></template>
+				<template if:true={allAuthorsData}>
+					<template for:each={allAuthors} for:item="author">
+						<tr key={author.Id}>
+							<td data-label="Author full name">{author.authorFullName}</td>
+							<td data-label="Edit">
+								<a href={author.authorHref}><img src={editIcon} alt="Edit" title="Edit" /></a>
+							</td>
+						</tr>
+					</template>
+				</template>
+			</tbody>
+		</table>
+	</template>
+	<template if:true={singleAuthorEdit}>
+		<template for:each={singleAuthor} for:item="author">
+			<div key={author.authorId} class="adminEditAuthorWrapper">
+				<c-module-sub-admin-content-header>{author.authorFullName}</c-module-sub-admin-content-header>
+				<div class="adminEditAuthorWrapper__title">Author full name:</div>
+
+				<input
+					type="text"
+					class="adminEditAuthorWrapper__input"
+					value={inputsValue.authorFullName}
+					name="authorFullName"
+					onchange={checkEditAuthorInputs}
+				/>
+				<div class="adminEditAuthorWrapper__error">{inputsError.authorFullName}</div>
+				<input
+					class="adminEditAuthorWrapper__submit"
+					type="submit"
+					value="Edit Author"
+					onclick={submitEditAuthor}
+				/>
+
+			</div>
+		</template>
+	</template>
+</template>

@@ -1,0 +1,40 @@
+.mainMenu {
+    display: flex;
+}
+
+@media screen and (max-width: 640px) {
+	.mainMenu {
+		position: relative;
+	}
+
+    .mainMenu::after {
+		content: "X";
+	}
+}
+.mainMenu__item {
+    margin: 0 0.5rem;
+    padding: 2rem 0.5rem 1rem 0.5rem;
+    cursor: pointer;
+    transition: background-color 1s;
+}
+
+@media screen and (max-width: 640px) {
+	.mainMenu__item {
+		display: none;;
+	}
+
+
+}
+
+.mainMenu__item--active {
+    background-color: var(--colorSpringGreen);
+}
+
+.mainMenu__item:hover {
+    background-color: var(--colorSpringGreen);
+}
+
+
+
+
+

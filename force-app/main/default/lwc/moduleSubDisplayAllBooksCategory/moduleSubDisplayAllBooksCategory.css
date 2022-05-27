@@ -1,0 +1,38 @@
+.allBooksCategoryWrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fontWorkSans);
+
+}
+
+.allBooksCategoryWrapper_header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+
+}
+
+.allBooksCategoryList {
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.allBooksCategoryList__item {
+    margin-left: 1rem;
+    padding-top: 1.5rem;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #3b3d42;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: padding-left 0.5s, color 0.5s;
+}
+
+.allBooksCategoryList__item:hover {
+    /* padding-left: 0.5rem; */
+    color: var(--colorSpringGreen);
+}
+

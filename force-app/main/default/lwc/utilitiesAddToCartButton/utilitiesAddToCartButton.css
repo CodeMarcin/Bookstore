@@ -1,0 +1,15 @@
+.addToCartButton {
+	padding: 1rem 2rem;
+	border: none;
+	background-color: var(--colorSpringGreen);
+	font-family: var(--fontWorkSans);
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	transition: background-color 0.5s;
+}
+
+.addToCartButton:hover {
+	background-color: var(--colorBlack);
+	color: var(--colorSpringGreen);
+}

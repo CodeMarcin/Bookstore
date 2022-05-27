@@ -1,0 +1,21 @@
+<template>
+	<div class="userProfilePanel">
+		<ul>
+			<template if:true={dataLoad}>
+				<template for:each={userProfilePanelElements} for:item="userProfilePanelElement">
+					<template if:false={userProfilePanelElement.closeButton}>
+						<li key={userProfilePanelElement.label} class="userProfilePanel__link">
+							<a href={userProfilePanelElement.pageURL}>{userProfilePanelElement.label}</a>
+						</li>
+					</template>
+					<template if:true={userProfilePanelElement.closeButton}>
+						<li key={userProfilePanelElement.label} class="userProfilePanel__link--close">
+							<span onclick={dispatchCloseUserProfilePanel}>{userProfilePanelElement.label}</span>
+						</li>
+					</template>
+				</template>
+			</template>
+			<template if:false={dataLoad}><c-utilities-loading></c-utilities-loading></template>
+		</ul>
+	</div>
+</template>

@@ -1,0 +1,14 @@
+.bestsellerLastArrival {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    margin: 1rem 0;
+    font-family: var(--fontWorkSans);
+    gap: 1rem;
+}
+
+@media (max-width: 576px) {
+	.bestsellerLastArrival {
+		flex-wrap: wrap;
+	}
+}

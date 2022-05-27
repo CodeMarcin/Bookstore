@@ -1,0 +1,25 @@
+<template>
+	<template if:false={booksData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+	<template if:true={booksData}>
+		<div class="books">
+			<template for:each={books} for:item="book">
+				<div class="singleBook" key={book.bookId}>
+					<div class="singleBook__image">
+						<a href={book.bookHref}
+							><img src={book.bookImage} alt={book.bookTitle} title={book.bookTitle}
+						/></a>
+					</div>
+					<p class="singleBook__title">
+						<a class="singleBook__titleLink" href={book.bookHref}>{book.bookTitle}</a>
+					</p>
+					<p class="singleBook__author">{book.bookAuthorFullName}</p>
+					<p class="singleBook__price">$ {book.bookPrice}</p>
+					<p class="singleBook__category">{book.bookCategoryName}</p>
+					<c-utilities-add-to-cart-button onclick={book.handleAddToCart}></c-utilities-add-to-cart-button>
+				</div>
+			</template>
+		</div>
+	</template>
+</template>

@@ -1,0 +1,160 @@
+<template>
+	<div class="userShoppingCartWrapper">
+		<template if:false={booksData}>
+			<c-utilities-loading></c-utilities-loading>
+		</template>
+		<template if:false={showGuestOrderStatus}>
+			<template if:true={booksDataLength}>
+				<div class="orderItems">
+					<table class="flex-table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>{titleText}</th>
+								<th>{priceText}</th>
+								<th>{quantityText}</th>
+								<th>{totalPriceText}</th>
+								<th>{deleteText}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<template for:each={books} for:item="book">
+								<tr key={book.id}>
+									<td data-label={image}>
+										<a href={book.href} target="_blank"
+											><img
+												src={book.image}
+												class="orderItems__image"
+												alt={book.title}
+												title={book.title}
+										/></a>
+									</td>
+									<td data-label={titleText}>
+										<a href={book.href} class="orderItems__link" target="_blank">{book.title}</a>
+									</td>
+									<td data-label={priceText}>$ {book.price}</td>
+									<td data-label={quantityText}>
+										<input
+											type="number"
+											min="1"
+											max={book.amount}
+											value={book.quantity}
+											class="global__inputNumber"
+											onchange={book.handleChangQuantity}
+										/>
+									</td>
+									<td data-label={totalPriceText}>$ {book.totalPrice}</td>
+									<td data-label={deleteText}>
+										<img src={deleteIcon} onclick={book.handleDeleteItem} />
+									</td>
+								</tr>
+							</template>
+						</tbody>
+					</table>
+					<div class="orderItems__totalPrice">
+						<p>Total price: $ {orderTotalPrice}</p>
+					</div>
+
+					<template for:each={users} for:item="user">
+						<div class="contactAddressInfo" key={user.Id}>
+							<h1 class="contactAddressInfo__header">Contact & Address Info</h1>
+
+							<div class="contactAddressInfo__singleItem">
+								<p class="contactAddressInfo__label">{firstNameText}:</p>
+								<input
+									type="text"
+									name="userFirstName"
+									class="contactAddressInfo__input"
+									value={inputsValue.userFirstName}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userFirstName}</p>
+								<p class="contactAddressInfo__label">{lastNameText}:</p>
+								<input
+									type="text"
+									name="userLastName"
+									class="contactAddressInfo__input"
+									value={inputsValue.userLastName}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userLastName}</p>
+								<p class="contactAddressInfo__label">{emailText}:</p>
+								<input
+									type="email"
+									name="userEmail"
+									class="contactAddressInfo__input"
+									value={inputsValue.userEmail}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userEmail}</p>
+								<p class="contactAddressInfo__label">{phoneText}:</p>
+								<input
+									type="text"
+									name="userPhone"
+									class="contactAddressInfo__input"
+									value={inputsValue.userPhone}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userPhone}</p>
+							</div>
+							<div class="contactAddressInfo__singleItem">
+								<p class="contactAddressInfo__label">{streetText}:</p>
+								<input
+									type="text"
+									name="userStreet"
+									class="contactAddressInfo__input"
+									value={inputsValue.userStreet}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userStreet}</p>
+								<p class="contactAddressInfo__label">{cityText}:</p>
+								<input
+									type="text"
+									name="userCity"
+									class="contactAddressInfo__input"
+									value={inputsValue.userCity}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userCity}</p>
+								<p class="contactAddressInfo__label">{postalCodeText}:</p>
+								<input
+									type="text"
+									name="userPostalCode"
+									class="contactAddressInfo__input"
+									value={inputsValue.userPostalCode}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userPostalCode}</p>
+								<p class="contactAddressInfo__label">{stateText}:</p>
+								<input
+									type="text"
+									name="userState"
+									class="contactAddressInfo__input"
+									value={inputsValue.userState}
+									onchange={checkInputs}
+								/>
+								<p class="contactAddressInfo__error">{inputsError.userState}</p>
+							</div>
+						</div>
+					</template>
+					<input
+						type="submit"
+						class="orderItems__submitOrder"
+						name="submitYourOrder"
+						value={submitOrderText}
+						onclick={handleSubmitOrder}
+					/>
+				</div>
+			</template>
+
+			<template if:false={booksDataLength}><div class="noItemToDisplay">{noItemsToDisplayText}</div></template>
+		</template>
+		<template if:true={showGuestOrderStatus}>
+			<div class="guestOrderInfo">
+				<p>Your order ID is <span class="guestOrderInfo__big">{guestOrderId}</span></p>
+				<p>Your order PIN is <span class="guestOrderInfo__big">{guestOrderPIN}</span></p>
+				<p>Check your status <a href={guestOrderHref}>HERE</a></p>
+			</div>
+		</template>
+	</div>
+</template>

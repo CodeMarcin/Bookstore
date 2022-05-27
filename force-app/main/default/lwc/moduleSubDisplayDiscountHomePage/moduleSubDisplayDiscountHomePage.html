@@ -1,0 +1,26 @@
+<template>
+	<div class="discountWrapper">
+		<template if:false={discountData}>
+			<c-utilities-loading></c-utilities-loading>
+		</template>
+
+		<template if:true={discountData}>
+			<h1 class="discountWrapper__header">{discountBooksText}</h1>
+			<div class="discountBooks">
+				<template for:each={discountBooks} for:item="discountBook">
+					<div key={discountBook.id} class="discountBooks__singleBook" onclick={discountBook.redirect}>
+						<div class="discountBooks__image">
+							<img src={discountBook.image} />
+						</div>
+						<div class="discountBooks__discountPrice">
+							<div class="discountPrice__oldPrice">$ {discountBook.price}</div>
+							<div class="discountPrice__newPrice">$ {discountBook.newPrice}</div>
+						</div>
+
+						<p class="discountBooks__title">{discountBook.title}</p>
+					</div>
+				</template>
+			</div>
+		</template>
+	</div>
+</template>

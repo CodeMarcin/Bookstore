@@ -1,0 +1,11 @@
+.displayAllBooksWrapper {
+    display: flex;
+}
+
+.displayAllBooksWrapper__category {
+    flex-basis: 30%;
+}
+
+.displayAllBooksWrapper__books {
+    
+}

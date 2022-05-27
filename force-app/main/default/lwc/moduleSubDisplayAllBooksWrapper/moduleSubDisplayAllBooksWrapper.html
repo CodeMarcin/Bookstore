@@ -1,0 +1,14 @@
+<template>
+	<div class="displayAllBooksWrapper">
+		<div class="displaAllBooksWrapper__category">
+			<c-module-sub-display-all-books-category
+				onchangecategory={handleChangeCategory}
+			></c-module-sub-display-all-books-category>
+		</div>
+		<div class="displaAllBooksWrapper__books">
+			<c-module-sub-display-all-books
+				category-id-from-dispatch={categoryIdFromDispatch}
+			></c-module-sub-display-all-books>
+		</div>
+	</div>
+</template>

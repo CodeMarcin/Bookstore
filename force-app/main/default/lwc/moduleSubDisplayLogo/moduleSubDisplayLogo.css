@@ -1,0 +1,7 @@
+.displayLogoWrapper {
+    display: flex;
+}
+
+.displayLogoWrapper__logo {
+    width: 50%;
+}

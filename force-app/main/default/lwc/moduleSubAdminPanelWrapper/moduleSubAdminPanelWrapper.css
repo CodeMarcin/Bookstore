@@ -1,0 +1,13 @@
+.adminPanelWrapper {
+    display: flex;
+}
+
+.adminPanelWrapper__menu {
+    flex-basis: 15%;
+}
+
+.adminPanelWrapper__content {
+    display: flex;
+    flex-basis: 85%;
+
+}

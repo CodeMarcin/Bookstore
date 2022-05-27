@@ -1,0 +1,35 @@
+.adminMenuPanel {
+	display: flex;
+	position: absolute;
+	top: 100%;
+	right: 0;
+	margin-top: 3px;
+	padding: 1.5rem 3rem;
+	font-family: var(--fontWorkSans);
+	font-weight: 500;
+	background-color: var(--colorWhite);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	z-index: 2;
+}
+
+.adminMenuPanel__linkHeader {
+	font-size: 1.1rem;
+	font-weight: 700;
+}
+
+.adminMenuPanel__link {
+	font-size: 1rem;
+	margin: 1.5rem 0;
+	margin-left: 0.5rem;
+}
+
+
+.adminMenuPanel__link--close {
+	margin-top: 2rem;
+	font-size: 1rem;
+	text-align: right;
+	cursor: pointer;
+	color: var(--colorBlack);
+}

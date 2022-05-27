@@ -1,0 +1,22 @@
+<template>
+	<div class="adminSummaryWrapper">
+		<c-module-sub-admin-content-header>{adminSummaryText}</c-module-sub-admin-content-header>
+		<template if:false={summaryData}>
+			<c-utilities-loading></c-utilities-loading>
+		</template>
+
+		<template if:true={summaryData}>
+			<div class="adminSummaryWrapper__items">
+				<div class="adminSummaryWrapper__item">
+					<span class="adminSummaryWrapper__itemTitle">Total users</span> {allUsersCount}
+				</div>
+                <div class="adminSummaryWrapper__item">
+					<span class="adminSummaryWrapper__itemTitle">Active users</span> {activeUsersCount}
+				</div>
+                <div class="adminSummaryWrapper__item">
+					<span class="adminSummaryWrapper__itemTitle">Not active users</span> {nonActiveUsersCount}
+				</div>
+			</div>
+		</template>
+	</div>
+</template>

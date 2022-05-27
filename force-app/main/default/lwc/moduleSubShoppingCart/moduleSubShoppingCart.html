@@ -1,0 +1,22 @@
+<template>
+	<div class="shoppingBar">
+		<template for:each={shoppingCartIcons} for:item="shoppingCartIcon">
+			<c-module-sub-shopping-cart-item
+				key={shoppingCartIcon.label}
+				item={shoppingCartIcon}
+				onhandleclickevent={handleClickEvent}
+			></c-module-sub-shopping-cart-item>
+		</template>
+
+		<template if:true={showUserProfilePanel}>
+			<c-module-sub-show-user-profile-panel oncloseuserprofilepanelevent={handleCloseUserProfilePanel}>
+			</c-module-sub-show-user-profile-panel>
+		</template>
+
+	</div>
+	<template if:true={showLoginRegisterModal}>
+		<c-utilities-modal-full-site onclosemodalevent={handleCloseModal}>
+			<c-module-sub-login-register-form></c-module-sub-login-register-form>
+		</c-utilities-modal-full-site>
+	</template>
+</template>

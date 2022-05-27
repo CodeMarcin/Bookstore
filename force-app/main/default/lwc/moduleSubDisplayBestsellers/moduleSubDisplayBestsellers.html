@@ -1,0 +1,17 @@
+<template>
+	<template if:false={bestsellersData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+
+	<template if:true={bestsellersData}>
+		<c-utilities-big-book-panel
+			key={bookId}
+			image={image}
+			label="Bestseller"
+			author={authorFullName}
+			title={title}
+			category={category}
+			hrefurl={hrefURL} 
+		></c-utilities-big-book-panel>
+	</template>
+</template>

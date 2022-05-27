@@ -1,0 +1,17 @@
+.letsGetSocial {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    font-family: var(--fontWorkSans);
+    gap: 2rem;
+    
+}
+
+.letsGetSocial__text {
+    font-size: 2rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}

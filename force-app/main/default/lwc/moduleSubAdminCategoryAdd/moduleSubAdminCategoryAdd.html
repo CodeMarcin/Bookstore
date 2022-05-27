@@ -1,0 +1,16 @@
+<template>
+	<div class="adminAddCategoryWrapper">
+		<c-module-sub-admin-content-header>{adminCategoryAddText}</c-module-sub-admin-content-header>
+		<div class="adminAddCategoryWrapper__title">Category name:</div>
+		<input
+			type="text"
+			class="adminAddCategoryWrapper__input"
+			value={inputsValue.categoryName}
+			name="categoryName"
+			onchange={checkAddCategoryInputs}
+		/>
+		<div class="adminAddCategoryWrapper__error">{inputsError.categoryName}</div>
+		<input class="adminAddCategoryWrapper__submit" type="submit" value="Add category" onclick={submitAddCategory} />
+		<div class="adminAddCategoryWrapper__success">{successText}</div>
+	</div>
+</template>

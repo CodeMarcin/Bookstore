@@ -1,0 +1,9 @@
+:host {
+    flex-basis: 50%;
+}
+
+@media (max-width: 576px) {
+	:host {
+		flex-basis: 100%;
+	}
+}

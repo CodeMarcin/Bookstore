@@ -1,0 +1,12 @@
+<template>
+    <ul class="adminMenu__wrapper">
+    <template for:each={adminMenuItems} for:item="adminMenuItem">
+        <template if:false={adminMenuItem.link}>
+            <li key={adminMenuItem.label} class="adminMenu__header">{adminMenuItem.label}</li>
+        </template>
+        <template if:true={adminMenuItem.link}>
+            <li key={adminMenuItem.label}><a class="adminMenu__link" href={adminMenuItem.href}>{adminMenuItem.label}</a></li>
+        </template>
+    </template>
+</ul>
+</template>

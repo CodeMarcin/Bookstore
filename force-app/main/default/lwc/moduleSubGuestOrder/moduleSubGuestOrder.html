@@ -1,0 +1,19 @@
+<template>
+	<div class="guestOrderWrapper">
+		<div class="guestOrderWrapper__item">
+			<span>Order Id:</span>
+			<input class="guestOrderWrapper__input" type="text" name="orderId" onchange={handleInputs} />
+		</div>
+		<div class="guestOrderWrapper__item">
+			<span>Order PIN:</span>
+			<input class="guestOrderWrapper__input" type="password" name="orderPIN" onchange={handleInputs} />
+		</div>
+		<div class="guestOrderWrapper__item">
+			<input type="submit" class="guestOrderWrapper__submit" value="Check status" onclick={checkIsOrderExsist} />
+		</div>
+		<template if:true={loadingData}><c-utilities-loading></c-utilities-loading></template>
+		<template if:true={showErrorMsg}>
+			<div class="guestORderWrapper__error">Wrong order Id or PIN</div>
+		</template>
+	</div>
+</template>

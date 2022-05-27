@@ -1,0 +1,24 @@
+<template>
+	<template if:true={item.link}>
+		<a href={item.href}>
+			<img
+				class="shoppingBar__icon"
+				src={item.icon}
+				alt={item.label}
+				title={item.label}
+				data-label={item.label}
+				data-link={item.link}
+			/>
+		</a>
+	</template>
+	<template if:false={item.link}>
+		<img
+			class="shoppingBar__icon"
+			src={item.icon}
+			alt={item.label}
+			title={item.label}
+			data-label={item.label}
+			onclick={dispatchEventFunction}
+		/>
+	</template>
+</template>

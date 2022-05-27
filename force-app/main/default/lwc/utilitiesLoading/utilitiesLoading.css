@@ -1,0 +1,9 @@
+:host {
+	flex-basis: 100%;
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+	padding: 2rem;
+}

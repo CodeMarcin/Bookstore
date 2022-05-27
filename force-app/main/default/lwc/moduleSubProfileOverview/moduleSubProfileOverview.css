@@ -1,0 +1,76 @@
+.profileOverview__wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	font-family: var(--fontWorkSans);
+}
+
+.userInfo__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	flex-basis: 100%;
+	gap: 1.5rem;
+}
+
+.userInfo__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-basis: 100%;
+	font-size: 1.2rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	padding: 0.5rem 1.5rem;
+	/* background-color: var(--colorSpringGreen); */
+}
+
+.userInfo__icon {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	font-size: 0.9rem;
+	font-weight: 700;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.userInfo__error {
+	color: #ff0000;
+	font-weight: 600;
+	font-size: 0.8rem;
+	text-align: center;
+}
+
+.userInfo__item {
+	padding-bottom: 2rem;
+}
+
+.userInfo__item--bold {
+	font-weight: 600;
+}
+
+.userInfo__input {
+	margin-left: 0.5rem;
+	/* border: none; */
+	border: 1px solid var(--colorDarkBorder);
+	border-radius: 10px;
+	padding: 0.5rem;
+
+}
+
+.userInfo__inputSubmit {
+	border: none;
+	padding: 0.5rem;
+	background-color: var(--colorSpringGreen);
+	font-size: 1.2rem;
+	font-weight: 600;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.userInfo__inputSubmit:disabled,
+.userInfo__inputSubmit[disabled] {
+	background-color: var(--colorDarkBorder);
+}

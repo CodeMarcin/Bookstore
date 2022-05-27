@@ -1,0 +1,8 @@
+.iconSVG {
+    padding: 0 0.5rem;
+    transition: filter 0.5s;
+}
+
+.iconSVG:hover {
+    filter: var(--filterSpringGreen);
+}

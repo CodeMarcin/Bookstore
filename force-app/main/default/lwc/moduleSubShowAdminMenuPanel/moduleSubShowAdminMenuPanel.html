@@ -1,0 +1,27 @@
+<template>
+	<div class="adminMenuPanel">
+		<ul>
+			<template for:each={adminMenuPanelElements} for:item="adminMenuPanelElement">
+				<template if:true={adminMenuPanelElement.header}>
+					<li key={adminMenuPanelElement.label} class="adminMenuPanel__linkHeader">
+						{adminMenuPanelElement.label}
+					</li>
+				</template>
+				<template if:false={adminMenuPanelElement.closeButton}>
+					<template if:false={adminMenuPanelElement.header}>
+						<li key={adminMenuPanelElement.label} class="adminMenuPanel__link">
+							<a href={adminMenuPanelElement.pageURL}>{adminMenuPanelElement.label}</a>
+						</li>
+					</template>
+				</template>
+				<template if:true={adminMenuPanelElement.closeButton}>
+					<template if:false={adminMenuPanelElement.header}>
+						<li key={adminMenuPanelElement.label} class="adminMenuPanel__link--close">
+							<span onclick={dispatchCloseAdminMenuPanel}>{adminMenuPanelElement.label}</span>
+						</li>
+					</template>
+				</template>
+			</template>
+		</ul>
+	</div>
+</template>

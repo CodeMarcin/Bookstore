@@ -1,0 +1,16 @@
+<template>
+	<div class="adminAddAuthorWrapper">
+		<c-module-sub-admin-content-header>{adminAuthorAddText}</c-module-sub-admin-content-header>
+		<div class="adminAddAuthorWrapper__title">Author full name:</div>
+		<input
+			type="text"
+			class="adminAddAuthorWrapper__input"
+			value={inputsValue.authorFullName}
+			name="authorFullName"
+			onchange={checkAddAuthorInputs}
+		/>
+		<div class="adminAddAuthorWrapper__error">{inputsError.authorFullName}</div>
+		<input class="adminAddAuthorWrapper__submit" type="submit" value="Add author" onclick={submitAddAuthor} />
+		<div class="adminAddAuthorWrapper__success">{successText}</div>
+	</div>
+</template>

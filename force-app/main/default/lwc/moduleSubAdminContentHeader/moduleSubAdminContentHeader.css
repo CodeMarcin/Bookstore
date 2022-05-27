@@ -1,0 +1,11 @@
+.adminContentHeader {
+    display: flex;
+    flex-basis: 100%;
+    padding: 0 1.5rem 0.7rem 1.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--fontWorkSans);
+    font-size: 1.3rem;
+    font-weight: 700;
+    border-bottom: 2px solid var(--colorBlack);
+    text-transform: uppercase;
+}

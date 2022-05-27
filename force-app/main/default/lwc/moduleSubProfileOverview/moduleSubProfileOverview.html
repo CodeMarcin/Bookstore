@@ -1,0 +1,155 @@
+<template>
+	<div class="profileOverview__wrapper">
+		<template if:true={grantAccess}>
+			<template if:false={userData}>
+				<c-utilities-loading></c-utilities-loading>
+			</template>
+			<template if:true={userData}>
+				<template for:each={userInfo} for:item="user">
+					<div key={user.Id}>
+						<div class="userInfo__wrapper">
+							<div class="userInfo__header">
+								<span>{basicInfoText}</span>
+								<template if:true={editBasicInfo}>
+									<div class="userInfo__icon" onclick={updateBasicInfo}>
+										<img src={saveIcon} />SAVE
+									</div>
+								</template>
+								<div class="userInfo__icon" onclick={toogleEditBasicInfo}>
+									<img src={editIcon} />EDIT
+								</div>
+							</div>
+
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{firstNameText}:</span>
+								<template if:false={editBasicInfo}><span> {user.firstName}</span> </template>
+								<template if:true={editBasicInfo}
+									><input
+										type="text"
+										class="userInfo__input"
+										name="userFirstName"
+										value={inputsValue.userFirstName}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userFirstName}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{lastNameText}:</span>
+								<template if:false={editBasicInfo}><span> {user.lastName}</span> </template>
+								<template if:true={editBasicInfo}
+									><input
+										type="text"
+										class="userInfo__input"
+										name="userLastName"
+										value={inputsValue.userLastName}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userLastName}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{emailText}:</span>
+								<template if:false={editBasicInfo}><span> {user.email}</span></template>
+								<template if:true={editBasicInfo}
+									><input
+										type="email"
+										class="userInfo__input"
+										name="userEmail"
+										value={inputsValue.userEmail}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userEmail}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{phoneText}:</span>
+								<template if:false={editBasicInfo}><span> {user.phone}</span></template>
+								<template if:true={editBasicInfo}
+									><input
+										type="text"
+										class="userInfo__input"
+										name="userPhone"
+										value={inputsValue.userPhone}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userPhone}</p>
+							</div>
+						</div>
+						<div class="userInfo__wrapper">
+							<div class="userInfo__header">
+								<span>{addressInfoText}</span>
+								<template if:true={editAddressInfo}>
+									<div class="userInfo__icon" onclick={updateAddresInfo}>
+										<img src={saveIcon} />SAVE
+									</div>
+								</template>
+								<div class="userInfo__icon" onclick={toogleEditAddressInfo}>
+									<img src={editIcon} />EDIT
+								</div>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{streetText}:</span>
+								<template if:false={editAddressInfo}><span> {user.street}</span></template>
+								<template if:true={editAddressInfo}>
+									<input
+										type="text"
+										class="userInfo__input"
+										name="userStreet"
+										value={inputsValue.userStreet}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userStreet}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{cityText}:</span>
+								<template if:false={editAddressInfo}><span> {user.city}</span></template>
+								<template if:true={editAddressInfo}>
+									<input
+										type="text"
+										class="userInfo__input"
+										name="userCity"
+										value={inputsValue.userCity}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userCity}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{postalCodeText}:</span>
+								<template if:false={editAddressInfo}><span> {user.postalCode}</span></template>
+								<template if:true={editAddressInfo}>
+									<input
+										type="text"
+										class="userInfo__input"
+										name="userPostalCode"
+										value={inputsValue.userPostalCode}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userPostalCode}</p>
+							</div>
+							<div class="userInfo__item">
+								<span class="userInfo__item--bold">{stateText}:</span>
+								<template if:false={editAddressInfo}><span> {user.state}</span></template>
+								<template if:true={editAddressInfo}>
+									<input
+										type="text"
+										class="userInfo__input"
+										name="userState"
+										value={inputsValue.userState}
+										onkeyup={checkEditInputs}
+									/>
+								</template>
+								<p class="userInfo__error">{inputsError.userState}</p>
+							</div>
+						</div>
+					</div>
+				</template>
+			</template>
+		</template>
+		<template if:false={grantAccess}><c-utilities-page-404></c-utilities-page-404></template>
+	</div>
+</template>

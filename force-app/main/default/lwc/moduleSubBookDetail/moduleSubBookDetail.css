@@ -1,0 +1,83 @@
+.bookDetailWrapper {
+    display: flex;
+    font-family: var(--fontWorkSans);
+}
+
+.bookDetailMain {
+    display: flex;
+    flex-basis: 100%;
+}
+
+@media screen and (max-width: 640px) {
+	.bookDetailMain {
+		flex-wrap: wrap;
+        justify-content: center;
+	}
+}
+
+.bookDetailMain__image {
+    flex: 0 0 30%;
+}
+
+@media screen and (max-width: 640px) {
+	.bookDetailMain__image {
+	flex-basis: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+	}
+}
+
+.bookDetailMain__basicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-basis: 70%;
+    gap: 1rem;
+}
+
+.basicInfo__title {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.basicInfo__author {
+    color: gray;
+}
+
+.basicInfo__description {
+    color: #333135;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--colorDarkBorder);
+    width: 100%;
+}
+
+.basicInfo__price {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.basicInfo__oldPrice {
+    text-decoration: line-through;
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding-right: 1rem;
+}
+
+.basicInfo__quantity {
+    font-weight: 600;
+}
+
+.quantity__input {
+    border: none;
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+}
+
+.quantity__input--error {
+    border: 2px solid red;
+    border-radius: 5px;
+}
+
+.quantity__input::-webkit-inner-spin-button {
+    opacity: 1;
+}

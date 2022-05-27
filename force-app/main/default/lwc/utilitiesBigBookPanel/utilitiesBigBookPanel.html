@@ -1,0 +1,14 @@
+<template>
+	<div class="singleBook" key={key}>
+		<div class="singleBook__image">
+			<a href={hrefurl}><img class="singleBook__image--img" src={image} /></a>
+		</div>
+		<div class="content">
+			<div class="content__label">{label}</div>
+			<div class="content__author">{author}</div>
+			<h1 class="content__title">{title}</h1>
+			<div class="content__category">{category}</div>
+			<div class="linkWrapper"><a class="linkWrapper__link" href={hrefurl}>{shopNowLabel}</a></div>
+		</div>
+	</div>
+</template>

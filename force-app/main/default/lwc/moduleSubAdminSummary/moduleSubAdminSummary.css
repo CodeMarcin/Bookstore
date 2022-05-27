@@ -1,0 +1,25 @@
+:host {
+    flex-basis: 100%;
+}
+.adminSummaryWrapper {
+    display: flex;
+    flex-basis: 100%;
+    font-family: var(--fontWorkSans);
+    flex-direction: column;
+}
+
+.adminSummaryWrapper__items { 
+    display: flex;
+    justify-content: space-around;
+}
+
+.adminSummaryWrapper__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.adminSummaryWrapper__itemTitle {
+    font-weight: 700;
+  
+}

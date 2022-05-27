@@ -1,0 +1,42 @@
+<template>
+	<template if:false={bookDetails}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+	<template if:true={bookDetails}>
+		<div class="bookDetailWrapper">
+			<div class="bookDetailMain">
+				<div class="bookDetailMain__image">
+					<img src={bookImage} />
+				</div>
+				<div class="bookDetailMain__basicInfo">
+					<h1 class="basicInfo__title">{bookTitle}</h1>
+					<h2 class="basicInfo__author">{bookAuthorFullName}</h2>
+					<div class="basicInfo__description">{bookDescription}</div>
+					<div class="basicInfo__price">
+						<template if:true={bookDiscountPrice}>
+							<span class="basicInfo__oldPrice">$ {bookPrice}</span>
+							$ {bookDiscountPrice}
+						</template>
+						<template if:false={bookDiscountPrice}> $ {bookPrice} </template>
+					</div>
+					<div class="basicInfo__quantity">
+						<p>
+							{quantityText}:
+							<input
+								type="number"
+								value="1"
+								class="quantity__input"
+								min="1"
+								max={bookAmount}
+								onchange={handlequantityinput}
+							/>
+						</p>
+						<p>{availableQuantityText}: {bookAmount}</p>
+					</div>
+
+					<c-utilities-add-to-cart-button onclick={handleAddToCart}></c-utilities-add-to-cart-button>
+				</div>
+			</div>
+		</div>
+	</template>
+</template>

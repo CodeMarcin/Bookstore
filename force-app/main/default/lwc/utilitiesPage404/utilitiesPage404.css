@@ -1,0 +1,13 @@
+:host {
+    flex-basis: 100%;
+}
+.noPage__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noPage__image {
+    display: flex;
+    justify-content: center;
+}

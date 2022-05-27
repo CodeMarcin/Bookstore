@@ -1,0 +1,100 @@
+<template>
+	<div class="registerUser__wrapper">
+		<template if:true={grantAccess}>
+			<div class="registerUser__singleItem">
+				<div class="registerUser__header">{basicInfoText}</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">First name:</p>
+					<input
+						type="text"
+						name="registerFirstName"
+						class="registerUser__input"
+						value={inputsValue.registerFirstName}
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerFirstName}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Last name:</p>
+					<input
+						type="text"
+						name="registerLastName"
+						class="registerUser__input"
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerLastName}</p>
+				</div>
+
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Password:</p>
+					<input
+						type="password"
+						name="registerPassword"
+						class="registerUser__input"
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerPassword}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Confirm password:</p>
+					<input
+						type="password"
+						name="registerConfirmPassword"
+						class="registerUser__input"
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerConfirmPassword}</p>
+				</div>
+
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Phone:</p>
+					<input type="text" name="registerPhone" class="registerUser__input" onblur={checkRegisterInputs} />
+					<p class="registerUser__error">{inputsError.registerPhone}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Email:</p>
+					<input type="text" name="registerEmail" class="registerUser__input" onblur={checkRegisterInputs} />
+					<p class="registerUser__error">{inputsError.registerEmail}</p>
+				</div>
+			</div>
+
+			<div class="registerUser__singleItem">
+				<div class="registerUser__header">{addressInfoText}</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Street:</p>
+					<input
+						type="text"
+						name="registerStreet"
+						class="registerUser__input"
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerStreet}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">City:</p>
+					<input type="text" name="registerCity" class="registerUser__input" onblur={checkRegisterInputs} />
+					<p class="registerUser__error">{inputsError.registerCity}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">Postal code:</p>
+					<input
+						type="text"
+						name="registerPostalCode"
+						class="registerUser__input"
+						onblur={checkRegisterInputs}
+					/>
+					<p class="registerUser__error">{inputsError.registerPostalCode}</p>
+				</div>
+				<div class="registerUser__item">
+					<p class="registerUser__inputName">State:</p>
+					<input type="text" name="registerState" class="registerUser__input" onblur={checkRegisterInputs} />
+					<p class="registerUser__error">{inputsError.registerState}</p>
+				</div>
+			</div>
+			<input type="submit" class="registerUser__submit" value="Register" onclick={registerNewUser}/>
+		</template>
+		<template if:false={grantAccess}>
+			<c-utilities-page404></c-utilities-page404>
+		</template>
+	</div>
+</template>

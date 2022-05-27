@@ -1,0 +1,6 @@
+.bigImageBackground {
+    background-image: url(https://mindful-shark-fpw3a-dev-ed--c.visualforce.com/resource/1651600132000/HarryBg);
+    width: 100%;
+    height: 100%;
+    display: block;
+}

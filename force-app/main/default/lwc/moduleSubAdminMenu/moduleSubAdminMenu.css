@@ -1,0 +1,29 @@
+.adminMenu__wrapper {
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fontWorkSans);
+    text-transform: uppercase;
+}
+
+.adminMenu__header {
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+.adminMenu__header:first-of-type {
+    margin-top: 0;
+}
+
+.adminMenu__link {
+    font-weight: 600;
+    font-size: 0.9rem;
+    padding-left: 0.7rem;
+    color: var(--colorBlack) !important;
+    letter-spacing: 1px;
+    transition: text-decoration 0.3s;
+}
+
+.adminMenu__link:hover {
+    text-decoration: underline !important;
+}

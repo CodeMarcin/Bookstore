@@ -1,0 +1,33 @@
+<template>
+	<div class="loginRegister">
+		<div class="loginRegister__header">{loginText}</div>
+
+		<div class="content">
+			<form style="width: 100%">
+				<ul style="width: 100%">
+					<li>
+						<input type="email" class="content__input" placeholder={loginText} onkeyup={handleLoginInput} />
+					</li>
+					<li>
+						<input
+							type="password"
+							class="content__input"
+							placeholder={passwordText}
+							onkeyup={handlePasswordInput}
+						/>
+					</li>
+					<template if:true={error}>
+						<li class="global__error">{errorMessage}</li>
+					</template>
+					<li>
+						<button disabled={disableLoginButton} class="content__button" onclick={handleLoginButton}>
+							LogIn
+						</button>
+					</li>
+					<li class="content__link"><a href={registerURL}>{noAccountText}</a></li>
+					<li class="content__link"><a href="#">{forgotPasswordText}</a></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+</template>

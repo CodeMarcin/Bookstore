@@ -1,0 +1,58 @@
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-left: 2.5rem;
+    gap: 2rem;
+    font-family: var(--fontWorkSans);
+}
+
+.singleBook {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 30%;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--colorDarkBorder);
+}
+
+.singleBook__image {
+    display: flex;
+    justify-content: center;
+}
+
+.singleBook__title {
+    font-weight: 800;
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+
+.singleBook__titleLink {
+    color: var(--coloBlack) !important;
+    transition: color 0.5s !important;
+}
+
+.singleBook__titleLink:hover {
+    color: var(--colorSpringGreen) !important;
+}
+
+.singleBook__author {
+    color: var(--colorDarkBorder);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.singleBook__price {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.singleBook__category {
+    background-color: var(--colorSpringGreen);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding: 0.5rem
+}

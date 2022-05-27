@@ -1,0 +1,5 @@
+.sectionFullWidthWrapper {
+    width: 100%;
+    display: flex;
+    padding: 0.2rem;
+}

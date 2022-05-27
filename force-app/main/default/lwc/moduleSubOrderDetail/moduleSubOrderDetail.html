@@ -1,0 +1,111 @@
+<template>
+	<template if:false={orderData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+	<template if:true={grantAccessToOrder}>
+		<div class="orderDetailWrapper">
+			<template for:each={orderInfo} for:item="order">
+				<div key={order.Id}>
+					<div class="orderDetailWrapper__header">
+						<div class="orderDetailWrapper__headerID">{order.orderName}</div>
+						<div class="orderDetailWrapper__headerDateTime">
+							<img
+								class="orderDetailWrapper__headerDateTimeImage"
+								src={clockWhiteIcon}
+								title="Time"
+								alt="Time"
+							/>
+							{order.orderTime}
+							<img
+								class="orderDetailWrapper__headerDateTimeImage"
+								src={calendarWhiteIcon}
+								title="Date"
+								alt="Date"
+							/>
+							{order.orderDate}
+						</div>
+						<div class="orderDetailWrapper__headerStatus">
+							Status: <span class={order.orderStatusColor}>{order.orderStatus}</span>
+						</div>
+					</div>
+
+					<table class="flex-table">
+						<thead>
+							<tr>
+								<th></th>
+								<th>{titleText}</th>
+								<th>{priceText}</th>
+								<th>{quantityText}</th>
+								<th>{totalPriceText}</th>
+							</tr>
+						</thead>
+						<tbody>
+							<template for:each={order.orderItemsArray} for:item="orderItem">
+								<tr key={orderItem.bookId}>
+									<td data-labe="Image">
+										<a href={orderItem.bookHref} target="_blank">
+											<img
+												class="orderDetailWrapper__image"
+												src={orderItem.bookImage}
+												alt={orderItem.bookTitle}
+												title={orderItem.bookTitle}
+											/>
+										</a>
+									</td>
+									<td data-label={titleText}>
+										<a href={orderItem.bookHref} class="orderDetailWrappers__link" target="_blank"
+											>{orderItem.bookTitle}</a
+										>
+									</td>
+									<td data-label={priceText}>$ {orderItem.bookPrice}</td>
+									<td data-label={quantityText}>{orderItem.bookQuantity}</td>
+									<td data-label={totalPriceText}>$ {orderItem.bookItemsTotalPrice}</td>
+								</tr>
+							</template>
+						</tbody>
+					</table>
+					<div class="orderDetailWrappers__totalPrice">{totalPriceText}: $ {order.orderTotalPrice}</div>
+					<div class="contactAddressInfo__wrapper">
+						<div class="contactAddressInfo__header">Contact & Address Info</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{firstNameText}: </span>
+							{order.orderCustomerFirstName}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{lastNameText}: </span>
+							{order.orderCustomerLastName}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{emailText}: </span>
+							{order.orderCustomerEmail}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{phoneText}: </span>
+							{order.orderCustomerPhone}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{cityText}: </span>
+							{order.orderCustomerCity}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{streetText}: </span>
+							{order.orderCustomerStreet}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{postalCodeText}: </span>
+							{order.orderCustomerPostalCode}
+						</div>
+						<div class="contactAddressInfo__item">
+							<span class="contactAddressInfo__itemBold">{stateText}: </span>
+							{order.orderCustomerState}
+						</div>
+					</div>
+				</div>
+			</template>
+		</div>
+		<template if:false={grantAccessToOrder}>
+			<c-utilities-page404></c-utilities-page404>
+		</template>
+	</template>
+	
+</template>

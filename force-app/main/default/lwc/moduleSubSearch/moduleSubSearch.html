@@ -1,0 +1,42 @@
+<template>
+	<div class="searchWrapper">
+		<input
+			class="searchWrapper__inputText"
+			type="text"
+			placeholder={searchValue}
+			onkeydown={handleSearchInputKeyDown}
+			onblur={hanldeSearchInputBlur}
+			onfocus={handleSearchInputFocus}
+		/>
+		<template if:true={showSearchResult}>
+			<div class="searchWrapper__result">
+				<template if:true={loadingData}>Loading...</template>
+				<template if:false={loadingData}>
+					<template if:true={noDataToDisplay}>No data to display</template>
+					<template if:false={noDataToDisplay}>
+						<template if:true={booksData}>
+							<template for:each={books} for:item="book">
+								<div key={book.bookId} class="singleItem">
+									<a class="singleItem__link" onclick={book.redirect} href={book.bookHref}>
+										<p>{book.bookTitle}</p>
+										<p>{book.bookAuthorName}</p></a
+									>
+								</div>
+							</template>
+						</template>
+						<template if:true={authorsData}>
+							<template for:each={authors} for:item="author">
+								<div key={author.authorId} class="singleItem">
+									<a class="singleItem__link">
+										<p>{author.authorName}</p>
+						
+									</a>
+								</div>
+							</template>
+						</template>
+					</template>
+				</template>
+			</div>
+		</template>
+	</div>
+</template>

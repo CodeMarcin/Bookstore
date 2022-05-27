@@ -1,0 +1,33 @@
+.guestOrderWrapper {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    font-weight: 600;
+    font-family: var(--fontWorkSans);
+}
+
+.guestOrderWrapper__item {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+}
+
+.guestOrderWrapper__input {
+    border: none;
+    border-bottom: 1px solid var(--colorBlack);
+    padding: 0.5rem 1rem;
+}
+
+.guestOrderWrapper__submit {
+    background-color: none;
+    font-weight: 700;
+    border: none;
+    text-decoration: underline;
+}
+
+.guestORderWrapper__error {
+    text-align: center;
+    text-transform: uppercase;
+    color: red;
+    font-weight: 600;
+}

@@ -1,0 +1,47 @@
+<template>
+	<template if:false={isAdmin}>
+		<c-utilities-page404></c-utilities-page404>
+	</template>
+
+	<template if:true={isAdmin}>
+		<div class="adminPanelWrapper">
+			<div class="adminPanelWrapper__menu"><c-module-sub-admin-menu></c-module-sub-admin-menu></div>
+			<div class="adminPanelWrapper__content">
+				<!-- Admin Summary -->
+				<template if:true={siteToDisplay.Admin_Summary}>
+					<c-module-sub-admin-summary></c-module-sub-admin-summary>
+				</template>
+
+				<!-- Author Add -->
+				<template if:true={siteToDisplay.Admin_Author_Add}>
+					<c-module-sub-admin-author-add></c-module-sub-admin-author-add>
+				</template>
+
+				<!-- Author Edit -->
+				<template if:true={siteToDisplay.Admin_Author_Edit}>
+					<c-module-sub-admin-author-edit></c-module-sub-admin-author-edit>
+				</template>
+
+				<!-- Category Add -->
+				<template if:true={siteToDisplay.Admin_Category_Add}>
+					<c-module-sub-admin-category-add></c-module-sub-admin-category-add>
+				</template>
+
+				<!-- Category Edit -->
+				<template if:true={siteToDisplay.Admin_Category_Edit}>
+					<c-module-sub-admin-category-edit></c-module-sub-admin-category-edit>
+				</template>
+
+				<!-- Book Edit -->
+				<template if:true={siteToDisplay.Admin_Book_Edit}>
+					<c-module-sub-admin-book-edit></c-module-sub-admin-book-edit>
+				</template>
+
+				<!-- All Orders -->
+				<template if:true={siteToDisplay.Admin_Orders_All}>
+					<c-module-sub-admin-orders-all></c-module-sub-admin-orders-all>
+				</template>
+			</div>
+		</div>
+	</template>
+</template>

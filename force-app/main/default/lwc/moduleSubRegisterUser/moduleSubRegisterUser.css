@@ -1,0 +1,67 @@
+.registerUser__wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	font-family: var(--fontWorkSans);
+	gap: 1rem;
+}
+
+.registerUser__singleItem {
+	display: flex;
+	flex-basis: 33%;
+	flex-direction: column;
+}
+
+.registerUser__header {
+	flex-basis: 100%;
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	margin-bottom: 1.5rem;
+}
+
+.registerUser__item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.5rem;
+	margin-bottom: 1.2rem;
+}
+
+.registerUser__inputName {
+	font-size: 0.9rem;
+	font-weight: 700;
+	min-width: 150px;
+	margin-left: 1rem;
+}
+
+.registerUser__input {
+	border: none;
+	border-bottom: 1px solid var(--colorBlack);
+	padding: 0.5rem 1rem;
+}
+
+.registerUser__error {
+	color: #ff0000;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.registerUser__submit {
+	flex-basis: 40%;
+	border: none;
+    color: var(--colorBlack);
+    background: none;
+	font-weight: 700;
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	padding: 1rem 1.5rem;
+	letter-spacing: 1px;
+	transition: text-decoration 0.3s;
+}
+
+.registerUser__submit:hover {
+	text-decoration: underline;
+}

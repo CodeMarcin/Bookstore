@@ -1,0 +1,11 @@
+.shoppingBar {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 0;
+}
+
+@media (max-width: 576px) {
+    .shoppingBar {
+        position: static;
+    }
+}

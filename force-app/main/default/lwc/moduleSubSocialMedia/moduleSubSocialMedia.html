@@ -1,0 +1,10 @@
+<template>
+	<div class="socialMediaWrapper">
+		<template for:each={socialMedia} for:item="singleMedia">
+			<c-module-sub-social-media-item
+				key={singleMedia.label}
+				single-social={singleMedia}
+			></c-module-sub-social-media-item>
+		</template>
+	</div>
+</template>

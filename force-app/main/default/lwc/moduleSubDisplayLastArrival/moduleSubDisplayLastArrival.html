@@ -1,0 +1,17 @@
+<template>
+	<template if:false={lastArrivalData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+
+	<template if:true={lastArrivalData}>
+		<c-utilities-big-book-panel
+			key={bookId}
+			image={image}
+			label="Last Arrival"
+			author={authorFullName}
+			title={title}
+			category={category}
+			hrefurl={hrefURL}
+		></c-utilities-big-book-panel>
+	</template>
+</template>

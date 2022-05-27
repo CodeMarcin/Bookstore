@@ -1,0 +1,50 @@
+:host {
+	flex-basis: 100%;
+}
+
+.adminAddCategoryWrapper {
+	display: flex;
+	flex-basis: 100%;
+	font-family: var(--fontWorkSans);
+	flex-direction: column;
+}
+ 
+.adminAddCategoryWrapper__error {
+	color: #ff0000;
+	font-weight: 600;
+	font-size: 0.8rem;
+}
+
+.adminAddCategoryWrapper__success {
+    color: green;
+	font-weight: 600;
+	font-size: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.adminAddCategoryWrapper__title {
+	font-weight: 700;
+}
+
+.adminAddCategoryWrapper__input {
+	border: none;
+	border-bottom: 1px solid var(--colorBlack);
+	padding: 1rem 1.5rem;
+	margin-bottom: 1rem;
+}
+
+.adminAddCategoryWrapper__submit {
+	border: none;
+	background: var(--colorBlack);
+    color: var(--colorWhite);
+	font-weight: 800;
+    padding: 1rem 1.5rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.adminAddCategoryWrapper__submit:hover {
+	color: var(--colorWhite);
+	background-color: var(--colorSpringGreen);
+}

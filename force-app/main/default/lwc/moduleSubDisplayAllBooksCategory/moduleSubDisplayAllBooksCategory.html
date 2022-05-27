@@ -1,0 +1,22 @@
+<template>
+	<template if:false={categoryData}>
+		<c-utilities-loading></c-utilities-loading>
+	</template>
+	<template if:true={categoryData}>
+		<div class="allBooksCategoryWrapper">
+			<div class="allBooksCategoryWrapper_header">{categoryText}</div>
+			<ul class="allBooksCategoryList">
+				<li class="allBooksCategoryList__item" onclick={dispatchEventChangeCategoryForAll}>All</li>
+				<template for:each={categoryItems} for:item="category">
+					<li
+						class="allBooksCategoryList__item"
+						key={category.id}
+						onclick={category.dispatchEventChangeCategory}
+					>
+						{category.name}
+					</li>
+				</template>
+			</ul>
+		</div>
+	</template>
+</template>
